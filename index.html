@@ -1,0 +1,309 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codandam Furniture | Master Artisan Teak Woodcraft</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teak: {
+                            50: '#FDFBF7',
+                            100: '#F4ECE1',
+                            200: '#E8D5BF',
+                            300: '#D5B694',
+                            400: '#B88B5C',
+                            500: '#9E6D3B',
+                            600: '#7E502B',
+                            700: '#5F391F',
+                            800: '#432615',
+                            900: '#2C1A0E',
+                            950: '#1A0E07',
+                        },
+                        gold: {
+                            400: '#E6C675',
+                            500: '#D4AF37',
+                            600: '#C5A059',
+                            700: '#9B7832',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .wood-texture {
+            background-color: #2C1A0E;
+            background-image: radial-gradient(#3d2414 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FCE8B3 0%, #D4AF37 50%, #C5A059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #D4AF37, #C5A059, #9B7832) 1;
+        }
+        .glass-panel {
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(12px);
+        }
+        .glass-panel-dark {
+            background: rgba(44, 26, 14, 0.85);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="font-sans bg-teak-50 text-gray-800 antialiased selection:bg-gold-500 selection:text-teak-900">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-panel border-b border-teak-200/60 shadow-sm" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-teak-900 flex items-center justify-center border border-gold-500 shadow-md">
+                    <i class="fa-solid fa-crown text-gold-500 text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-xl sm:text-2xl text-teak-900 tracking-wider block leading-none">CODANDAM</span>
+                    <span class="text-[10px] tracking-[0.25em] text-gold-600 font-semibold uppercase block mt-1">Furniture • Est. 2016</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-teak-800">
+                <a href="#hero" class="hover:text-gold-600 transition-colors">Home</a>
+                <a href="#craftsmanship" class="hover:text-gold-600 transition-colors">Heritage</a>
+                <a href="#customizer" class="hover:text-gold-600 transition-colors flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span> Customizer
+                </a>
+                <a href="#gallery" class="hover:text-gold-600 transition-colors">Showcase</a>
+                <a href="#contact" class="hover:text-gold-600 transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="#customizer" class="bg-teak-900 hover:bg-teak-800 text-gold-400 font-medium px-5 py-2.5 rounded-full text-sm border border-gold-500/40 transition-all shadow-lg shadow-teak-900/10 flex items-center gap-2">
+                    <i class="fa-solid fa-sliders"></i> Build Custom Quote
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" class="md:hidden text-teak-900 p-2 rounded-lg hover:bg-teak-100 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-teak-900 text-teak-100 border-b border-gold-500/30 px-6 py-6 space-y-4">
+            <a href="#hero" class="block py-2 hover:text-gold-400 border-b border-teak-800">Home</a>
+            <a href="#craftsmanship" class="block py-2 hover:text-gold-400 border-b border-teak-800">Heritage</a>
+            <a href="#customizer" class="block py-2 hover:text-gold-400 border-b border-teak-800">Price Estimator & Customizer</a>
+            <a href="#gallery" class="block py-2 hover:text-gold-400 border-b border-teak-800">Gallery</a>
+            <a href="#contact" class="block py-2 hover:text-gold-400">Contact & Address</a>
+            <a href="#customizer" class="block text-center bg-gold-500 text-teak-950 font-semibold py-3 rounded-lg shadow-md mt-4">
+                Configure Custom Piece
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-28 pb-20 md:pt-36 md:pb-32 wood-texture text-white overflow-hidden min-h-screen flex items-center">
+        <!-- Background Overlay & Image Blend -->
+        <div class="absolute inset-0 z-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=80" alt="Teak Wood Texture" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-widest">
+                        <i class="fa-solid fa-gem text-gold-500"></i> Pure Teak Wood & Custom Carpentry
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+                        Timeless South Indian <span class="gold-gradient-text block mt-1">Teak Wood Artistry</span>
+                    </h1>
+
+                    <p class="text-teak-200 text-base sm:text-lg max-w-2xl leading-relaxed font-light mx-auto lg:mx-0">
+                        Handcrafted architectural doors, royal dining sets, and bespoke carved temple pillars built in Villianur, Puducherry since 2016. Engineered for generations.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#customizer" class="w-full sm:w-auto bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-teak-950 font-bold px-8 py-4 rounded-xl shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
+                            <span>Explore Customizer & Calculator</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="#gallery" class="w-full sm:w-auto bg-teak-800/80 hover:bg-teak-800 text-teak-100 font-medium px-8 py-4 rounded-xl border border-teak-600/50 transition-all text-center">
+                            View Masterpieces
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-teak-800/80 text-center lg:text-left">
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-gold-400">100%</p>
+                            <p class="text-xs text-teak-300 uppercase tracking-wider mt-0.5">Seasoned Teak</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-gold-400">8+ Yrs</p>
+                            <p class="text-xs text-teak-300 uppercase tracking-wider mt-0.5">Villianur Heritage</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl font-bold text-gold-400">Custom</p>
+                            <p class="text-xs text-teak-300 uppercase tracking-wider mt-0.5">Hand Carving</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Showcase -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Frame -->
+                        <div class="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-gold-500/30 via-transparent to-gold-500/10 blur-xl"></div>
+                        
+                        <div class="relative bg-teak-900 border border-gold-500/30 rounded-2xl p-3 shadow-2xl overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1000&q=80" alt="Royal Teak Furniture" class="w-full h-[420px] object-cover rounded-xl shadow-inner">
+                            
+                            <!-- Floating Card -->
+                            <div class="absolute bottom-6 left-6 right-6 glass-panel-dark border border-gold-500/40 p-4 rounded-xl text-white shadow-xl flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-lg bg-gold-500/20 border border-gold-500 flex items-center justify-center text-gold-400 shrink-0">
+                                    <i class="fa-solid fa-compass-drafting text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif text-sm font-semibold text-gold-400">Architectural Precision</h4>
+                                    <p class="text-xs text-teak-200">Traditional Joinery & Termite Proof Teak Wood</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage & About Section -->
+    <section id="craftsmanship" class="py-20 bg-teak-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" class="rounded-2xl h-64 w-full object-cover shadow-md hover:scale-[1.02] transition-transform">
+                    <img src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=600&q=80" class="rounded-2xl h-64 w-full object-cover shadow-md translate-y-6 hover:scale-[1.02] transition-transform">
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block px-3 py-1 rounded-full bg-teak-100 text-teak-700 text-xs font-semibold tracking-wider uppercase">
+                        Our Heritage • Est. 2016
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-teak-950">
+                        Carving Tradition into Modern Sanctuaries
+                    </h2>
+                    <p class="text-teak-800 leading-relaxed">
+                        Founded in 2016 at <strong>Villianur, Puducherry</strong>, Codandam Furniture has earned its reputation as a premiere craftsman of high-grade Burma and Indian Teakwood products. From grand entrance temple-carved doors to modern dining sets, every piece is built with precision, durability, and deep cultural resonance.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-10 h-10 rounded-lg bg-teak-900 text-gold-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-tree"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-semibold text-teak-900">Grade A Teak Wood</h4>
+                                <p class="text-xs text-teak-700 mt-1">Naturally oil-rich, moisture-resistant wood ensuring century-long durability.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="w-10 h-10 rounded-lg bg-teak-900 text-gold-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-hands-holding-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-semibold text-teak-900">Hand Carving Artisans</h4>
+                                <p class="text-xs text-teak-700 mt-1">Specialized floral motifs, temple architecture, and bespoke reliefs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Customizer & Price Estimator -->
+    <section id="customizer" class="py-24 wood-texture text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-gold-400 font-semibold text-xs tracking-widest uppercase bg-gold-500/10 px-4 py-1.5 rounded-full border border-gold-500/30">
+                    Interactive Design Tool
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text">
+                    Custom Woodcraft Price Estimator
+                </h2>
+                <p class="text-teak-200 text-sm sm:text-base">
+                    Tailor your dream furniture piece. Select your timber type, intricate carvings, finish, and dimensions for an instant estimated budget and crafting timeline.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Controls Side (Left 7 Cols) -->
+                <div class="lg:col-span-7 bg-teak-900/90 border border-gold-500/30 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-2xl space-y-6">
+                    
+                    <!-- 1. Furniture Type -->
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-400 uppercase tracking-wider mb-3">1. Select Furniture Item</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="itemTypeGrid">
+                            <button data-type="door" class="customizer-item p-3.5 rounded-xl border border-teak-700 bg-teak-950/60 hover:border-gold-500 text-left transition-all active-item border-gold-500 bg-gold-500/10">
+                                <i class="fa-solid fa-door-closed text-gold-400 text-lg mb-2 block"></i>
+                                <span class="font-serif text-sm font-semibold block">Teak Door</span>
+                                <span class="text-[11px] text-teak-300">Carved / Main Door</span>
+                            </button>
+                            <button data-type="dining" class="customizer-item p-3.5 rounded-xl border border-teak-700 bg-teak-950/60 hover:border-gold-500 text-left transition-all">
+                                <i class="fa-solid fa-utensils text-gold-400 text-lg mb-2 block"></i>
+                                <span class="font-serif text-sm font-semibold block">Dining Table</span>
+                                <span class="text-[11px] text-teak-300">6 to 10 Seater</span>
+                            </button>
+                            <button data-type="sofa" class="customizer-item p-3.5 rounded-xl border border-teak-700 bg-teak-950/60 hover:border-gold-500 text-left transition-all">
+                                <i class="fa-solid fa-couch text-gold-400 text-lg mb-2 block"></i>
+                                <span class="font-serif text-sm font-semibold block">Teak Sofa Set</span>
+                                <span class="text-[11px] text-teak-300">3+1+1 Cushion/Wooden</span>
+                            </button>
+                            <button data-type="bed" class="customizer-item p-3.5 rounded-xl border border-teak-700 bg-teak-950/60 hover:border-gold-500 text-left transition-all">
+                                <i class="fa-solid fa-bed text-gold-400 text-lg mb-2 block"></i>
+                                <span class="font-serif text-sm font-semibold block">Royal Bed</span>
+                                <span class="text-[11px] text-teak-300">King / Queen Frame</span>
+                            </button>
+                            <button data-type="pillar" class="customizer-item p-3.5 rounded-xl border border-teak-700 bg-teak-950/60 hover:border-gold-500 text-left transition-all">
+                                <i class="fa-solid fa-gopuram text-gold-400 text-lg mb-2 block"></i>
+                                <span class="font-serif text-sm font-semibold block">Temple Pillar</span>
+                                <span class="text-[11px] text-teak-300">Traditional Carved</span>
+                            </button>
+                            <button data-type="cabinet" class="customizer-item p-3.5 rounded-xl border border-teak-700 bg-teak-950/60 hover:border-gold-500 text-left transition-all">
+                                <i class="fa-solid fa-box-archive text-gold-400 text-lg mb-2 block"></i>
+                                <span class="font-serif text-sm font-semibold block">Crockery / Arch</span>
+                                <span class="text-[11px] text-teak-300">Showcase Showcase</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Wood Species -->
+                    <div>
+                        <label class="block text-xs font-semibold text-gold-400 uppercase tracking-wider mb-3">2. Choose Wood Material</label>
+                        <select id="woodSelect" class="w-full bg-teak-950 border border-teak-700 text-teak-100 rounded-xl px-4 py-3 focus:outline-none focus:border-gold-500">
+                            <option value="1.0" selected>First Quality Burma Teak (Highest Durability & Grain)</option>
+                            <option value="0.85">Indian / CP Teak Wo
